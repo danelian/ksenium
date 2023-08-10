@@ -1,0 +1,183 @@
+$(document).ready(function () {
+	// ----- преобразуем картинку в встроеный svg------
+	function svg() {
+		$('img[src$=".svg"]').each(function () {
+			var $img = $(this);
+			var imgURL = $img.attr('src');
+			var attributes = $img.prop('attributes');
+			if ($img.hasClass('svg')) {
+				$.get(imgURL, function (data) {
+					var $svg = jQuery(data).find('svg');
+					$svg = $svg.removeAttr('xmlns:a');
+					$.each(attributes, function () {
+						$svg.attr(this.name, this.value);
+					});
+					$img.removeClass('svg').replaceWith($svg);
+				}, 'xml');
+			}
+		});
+	}
+	svg();
+
+
+	//--------------- loadmore--------------
+
+	var button = $('#loadmore span'),
+		paged = button.attr("data-paged"),
+		maxPages = button.attr("data-max-pages"),
+		action = button.attr("data-action"),
+		term_id = button.attr("data-term"),
+		loadmore = $('#loadmore');
+
+	button.click(function (event) {
+		event.preventDefault();
+
+
+		$.ajax({
+			type: 'POST',
+			url: location.origin + '/wp-admin/admin-ajax.php',
+			data: {
+				paged: paged,
+				action: action,
+				term_id: term_id
+			},
+			beforeSend: function (xhr) {
+
+			},
+			success: function (data) {
+				paged++;
+				button.parent().prev('#posts').append(data);
+				if (paged == maxPages) {
+					button.remove();
+				}
+
+			}
+		});
+	});
+
+
+	/*=== ВИДЖЕТ КАТЕГОРИЙ ==================================*/
+	var submenus = document.querySelectorAll('.widget_categories-submenu');
+	submenus.forEach(function (submenu) {
+		var li = submenu.parentNode;
+		var icon = document.createElement('i');
+		icon.className = 'icomoon icon-chevron';
+		li.insertBefore(icon, submenu);
+	}); 
+
+	$('.widget_categories > ul > li > .widget_categories-submenu').hide();
+	if ($('.widget_categories > ul > li.current-category-parent').length > 0) {
+		$('.widget_categories > ul > li.current-category-parent').addClass('active').find(".widget_categories-submenu").slideDown();
+	} else {
+		$('.widget_categories > ul > li:first-child').addClass('active');
+	}
+	$('.widget_categories > ul > li').click(function (event) {
+		if (!$(event.target).is('a')) {
+			if ($(this).hasClass("active")) {
+				$(this).removeClass("active").find(".widget_categories-submenu").slideUp();
+			} else {
+				$(".widget_categories > ul > li.active .widget_categories-submenu").slideUp();
+				$(".widget_categories > ul > li.active").removeClass("active");
+				$(this).addClass("active").find(".widget_categories-submenu").slideDown();
+			}
+			return false;
+		}
+	});
+
+
+	/*=== DARK LIGHT THEME ==================================*/
+	const themeButton1 = document.getElementById('theme-button1')
+	const themeButton2 = document.getElementById('theme-button2')
+	const darkTheme = 'dark-theme'
+	const iconTheme = 'icon-sun'
+
+	// Previously selected topic (if user selected)
+	const selectedTheme = localStorage.getItem('selected-theme')
+	const selectedIcon = localStorage.getItem('selected-icon')
+
+	// We obtain the current theme that the interface has by validating the dark-theme class
+	const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+	const getCurrentIcon = () => themeButton1.classList.contains(iconTheme) ? 'icomoon icon-moon' : 'icomoon icon-sun'
+
+	// We validate if the user previously chose a topic
+	if (selectedTheme) {
+		// If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+		document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+		themeButton1.classList[selectedIcon === 'icomoon icon-moon' ? 'add' : 'remove'](iconTheme)
+	}
+
+	// Activate / deactivate the theme manually with the button
+	themeButton1.addEventListener('click', () => {
+		// Add or remove the dark / icon theme
+		document.body.classList.toggle(darkTheme)
+		themeButton1.classList.toggle(iconTheme)
+		// We save the theme and the current icon that the user chose
+		localStorage.setItem('selected-theme', getCurrentTheme())
+		localStorage.setItem('selected-icon', getCurrentIcon())
+	})
+
+	// Repeat the same code for the second button using themeButton2 instead of themeButton1.
+	themeButton2.addEventListener('click', () => {
+		// Add or remove the dark / icon theme
+		document.body.classList.toggle(darkTheme)
+		themeButton2.classList.toggle(iconTheme)
+		// We save the theme and the current icon that the user chose
+		localStorage.setItem('selected-theme', getCurrentTheme())
+		localStorage.setItem('selected-icon', getCurrentIcon())
+	})
+
+
+	/*=== Search (Header) ==================================*/
+	let searchHiddenInput = document.querySelector("#searchHiddenInput");
+	let searchToggleBtn = document.querySelector("#searchToggleBtn");
+	let searchBarLabel = document.querySelector("#searchBarLabel");
+	searchToggleBtn.addEventListener("click", () => {
+		searchBarLabel.classList.toggle("active");
+		searchHiddenInput.focus();
+	});
+	document.addEventListener("click", (event) => {
+		if (!event.target.matches("#searchBarLabel, #searchToggleBtn, #searchToggleBtn i, #searchHiddenInput")) {
+			searchBarLabel.classList.remove("active");
+		}
+	});
+	window.onscroll = () => {
+		searchBarLabel.classList.remove("active");
+	}
+
+
+	/*=== Burger Menu ==================================*/
+	const navMenu = document.getElementById('nav-menu'),
+		navToggle = document.getElementById('nav-toggle'),
+		body = document.querySelector('body');
+	if (navToggle) {
+		navToggle.addEventListener('click', () => {
+			navToggle.querySelector('i').classList.toggle('icon-remove');
+			navMenu.classList.toggle('show-menu');
+			body.classList.toggle('dis-scroll');
+		});
+	}
+	const navLink = document.querySelectorAll('.nav-list li a, .nav-menu .header-bar .btn-icon')
+	const linkAction = () => {
+		const navMenu = document.getElementById('nav-menu')
+		navToggle.querySelector('i').classList.toggle('icon-remove');
+		navMenu.classList.remove('show-menu');
+		body.classList.remove('dis-scroll');
+	}
+	navLink.forEach(n => n.addEventListener('click', linkAction));
+
+
+
+	/*=== Widget Categories ==================================*/
+
+
+
+	$('.owl-carousel').owlCarousel({
+		loop: true,
+		margin: 10,
+		items: 1,
+		nav: true,
+		navText: false,
+		autoHeight: true,
+	})
+
+});
