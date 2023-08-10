@@ -1,20 +1,15 @@
 /***** FONTS *****/
-@import "fonts";
+// @import "fonts";
 
 /***** GENERAL ELEMENTS *****/
 :root {
-  // base
-  --font-family: 'Rubik', sans-serif;
-
-  --content-width: 1320px;
-  --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
   // colors
   --white-color: #ffffff;
   --black-color: #35313F;
 
-  --font-color: #35313F;
+  --font-color: #333333;
+
+  --global-color: #E7344C;
 
   --grey-color: #F3F3F3;
   --darkGrey-color: #A8A8A8;
@@ -30,6 +25,4 @@
 /***** COMPONENTS GLOBAL *****/
 
 /***** SECTIONS GLOBAL (Widgets) *****/
-
-/***** Page (article) *****/
-// @import "page/content";
+@import "widgets/hero.scss";

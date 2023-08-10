@@ -1,0 +1,41 @@
+.hero {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__content {
+    width: calc(62% - 15px);
+    &-group {
+      display: flex;
+      margin-bottom: 24px;
+    }
+  }
+  &__img {
+    width: calc(38% - 15px);
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  &__text {
+    margin-right: 30px;
+    max-width: 440px;
+    line-height: 1.3;
+  }
+  &__price {
+    display: flex;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--global-color);
+    span {
+      margin-top: 8px;
+      margin-left: 6px;
+      font-size: 16px;
+    }
+  }
+}
