@@ -434,6 +434,41 @@ textarea {
   line-height: 1.3;
 }
 
+@media screen and (max-width: 1200px) {
+  .learn .container::before {
+    bottom: -39px;
+  }
+  .learn .section-title {
+    font-size: 36px;
+  }
+  .learn__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .learn .section-title {
+    font-size: 28px;
+  }
+  .learn__list {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 24px;
+  }
+  .learn__list li img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+  .learn__list li p {
+    margin-top: 0;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .learn .section-title {
+    font-size: 24px;
+  }
+}
 .program {
   background: var(--violet-color);
 }
