@@ -1,0 +1,31 @@
+.mentors {
+  .section-title {
+    margin-bottom: 40px;
+  }
+  &__subtitle {
+    margin-bottom: 60px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 32px;
+    list-style: none;padding: 0;margin: 0;
+  }
+}
+.mentor {
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  h4 {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
