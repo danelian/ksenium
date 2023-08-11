@@ -40,6 +40,36 @@
 	background: none;
 }
 
+.button-rounded {
+	display: inline-block;				
+	align-items: center;
+	justify-content: center;
+	padding: 10px 32px;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	color: var(--font-color);
+	border-radius: 8px;
+	border: 1px solid #FBBA06;
+	outline:none;
+	background-color: transparent;
+	transition: all .3s ease-in;
+	cursor: pointer;
+	&:hover {
+		color: var(--font-color);
+		opacity: .85;
+	}
+	&.btn-o {
+		border: 1px solid #FBBA06;
+		&:hover {
+			color: var(--font-color);
+			background-color: var(--orange-color);
+		}
+	}
+}
+
 // .btn-icon {
 // 	display: inline-flex;
 // 	align-items: center;

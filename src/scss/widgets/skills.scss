@@ -1,0 +1,135 @@
+.results {
+  background: #F4F4F4;
+  &__block {
+    width: 100%;
+    background: #FFF;
+    border: 1px solid rgba(110,60,145,0.3);
+    border-radius: 8px;
+    margin-bottom: 80px;
+    padding: 40px 40px 27px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__subtitle {
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: .9;
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(110,60,145,0.3);
+    margin-bottom: 40px;
+    &-name {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    &-descr {
+      display: flex;
+      flex-direction: column;
+      width: 360px;
+      margin-left: 30px;
+    }
+    &-salary {
+      margin-bottom: 8px;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 600;
+      color: var(--violet-color);
+    }
+    &-subsalary {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+  }
+}
+.abilities__title {
+  margin-bottom: 36px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: .9;
+}
+.results-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 28px;
+    margin-right: 30px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: var(--violet-color);
+    }
+  }
+}
+.results__diplom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  &-left {
+    width: 50%;
+  }
+  &-right {
+    width: calc(50% - 30px);
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .button-rounded {
+    margin-top: 36px;
+  }
+}
+.diplom {
+  &__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: 620px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 40px 0  0;
+    margin: 0;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      img {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+      p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+    }
+  }
+}
