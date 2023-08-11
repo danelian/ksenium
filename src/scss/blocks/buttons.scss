@@ -31,15 +31,6 @@
 	}
 }
 
-.btn-reset {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	border: 0;outline: none;
-	background: none;
-}
-
 .button-rounded {
 	display: inline-block;				
 	align-items: center;
@@ -70,29 +61,19 @@
 	}
 }
 
-// .btn-icon {
-// 	display: inline-flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	text-align: center;
-// 	width: 44px;
-// 	height: 44px;
-// 	outline: none;
-//   border: 2px solid var(--white-color);
-// 	border-radius: 14px;
-//   background-color: var(--white-color);
-// 	transition: .3s ease;
-// 	cursor: pointer;
-//   i {
-//     font-size: 24px;
-//     line-height: 1;
-//     color: var(--violet-color);
-// 		transition: .3s ease;
-//   }
-//   &:hover {
-//     background-color: transparent;
-// 		i {
-// 			color: var(--white-color);
-// 		}
-//   }
-// }
+@include tablet {
+	/*-----buttons----*/
+	.button {
+		padding: 17px 24px;
+		font-size: 18px;
+		height: 56px;
+	}
+}
+
+@include mobile {
+	/*-----buttons----*/
+	.button {
+		padding: 13px 24px;
+		height: 48px;
+	}
+}

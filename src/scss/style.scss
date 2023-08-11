@@ -12,6 +12,22 @@
   --grey-color: #ededed;
 }
 
+@mixin desktop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
 /***** BLOCKS GLOBAL *****/
 @import "general";
 @import "blocks/buttons";
@@ -30,3 +46,4 @@
 @import "widgets/mentors.scss";
 @import "widgets/skills.scss";
 @import "widgets/gallery.scss";
+
