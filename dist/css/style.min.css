@@ -245,6 +245,50 @@ textarea {
   background-image: url("../img/checked.svg");
 }
 
+.accordeon-item {
+  position: relative;
+  border-bottom: 1px solid #DCDCDC !important;
+}
+.accordeon-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.accordeon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+.accordeon-title {
+  width: 100%;
+  margin: 0 10px 0 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--font-color);
+  transition: 0.3s;
+}
+
+.accordeon-content {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.25s ease;
+}
+.accordeon-content p {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.accordeon-open .accordeon-content {
+  margin-bottom: 36px;
+}
+
 /***** SECTIONS GLOBAL (Widgets) *****/
 .hero__container {
   display: flex;

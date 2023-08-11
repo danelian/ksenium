@@ -23,5 +23,28 @@ $(document).ready(function () {
     }
   }
 
+  // -------------------- Acordion FAQ -------------------------
+  const accordeonItems = document.querySelectorAll('.accordeon-item')
+  accordeonItems.forEach((item) => {
+    const accordeonHeader = item.querySelector('.accordeon-header')
+    accordeonHeader.addEventListener('click', () => {
+      const openItem = document.querySelector('.accordeon-open')
+      toggleItem(item)
+      if (openItem && openItem !== item) {
+        toggleItem(openItem)
+      }
+    })
+  })
+  const toggleItem = (item) => {
+    const accordeonContent = item.querySelector('.accordeon-content')
+    if (item.classList.contains('accordeon-open')) {
+      accordeonContent.removeAttribute('style')
+      item.classList.remove('accordeon-open')
+    } else {
+      accordeonContent.style.height = accordeonContent.scrollHeight + 'px'
+      item.classList.add('accordeon-open')
+    }
+  }
+
 
 });
