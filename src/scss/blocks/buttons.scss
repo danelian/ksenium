@@ -22,6 +22,13 @@
 		color: var(--white-color);
 		opacity: .85;
 	}
+	&.btn-o {
+		color: var(--font-color);
+		background-color: var(--orange-color);
+		&:hover {
+			color: var(--font-color);
+		}
+	}
 }
 
 .btn-reset {

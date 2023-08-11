@@ -20,10 +20,12 @@
 @import "general";
 @import "blocks/buttons";
 @import "blocks/title";
+@import "blocks/form";
 
 /***** SECTIONS GLOBAL (Widgets) *****/
 @import "widgets/hero.scss";
 @import "widgets/learn.scss";
 @import "widgets/program.scss";
 @import "widgets/whom.scss";
-@import "widgets/howeduc.scss"
+@import "widgets/howeduc.scss";
+@import "widgets/book.scss";

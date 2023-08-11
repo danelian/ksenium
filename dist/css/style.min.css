@@ -89,6 +89,13 @@ img {
   color: var(--white-color);
   opacity: 0.85;
 }
+.button.btn-o {
+  color: var(--font-color);
+  background-color: var(--orange-color);
+}
+.button.btn-o:hover {
+  color: var(--font-color);
+}
 
 .btn-reset {
   display: inline-flex;
@@ -115,6 +122,98 @@ img {
   line-height: 1.2;
   color: var(--font-color);
   margin-bottom: 40px;
+}
+
+/*-----form-----*/
+.form-accept {
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.form-accept a {
+  color: var(--orange-color);
+}
+
+label {
+  display: block;
+}
+
+input {
+  padding: 16px 20px;
+  width: 100%;
+  height: 56px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  color: rgba(51, 51, 50, 0.7);
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  background: #FBFBFB;
+  transition: 0.3s ease;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 140px;
+  max-height: 500px;
+  padding: 16px 20px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  color: rgba(51, 51, 50, 0.7);
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  background: #FBFBFB;
+  resize: none;
+}
+
+.wpcf7-spinner {
+  display: none !important;
+}
+
+/* Checkbox */
+.checkbox {
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  /* Checked */
+}
+.checkbox input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+.checkbox span {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white-color);
+}
+.checkbox span:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--white-color);
+  border-radius: 4px;
+  background-size: contain;
+}
+.checkbox input[type=checkbox]:checked + span:before {
+  background-image: url("../img/checked.svg");
 }
 
 /***** SECTIONS GLOBAL (Widgets) *****/
@@ -526,4 +625,67 @@ img {
 }
 .howeduc__block-title span {
   color: var(--violet-color);
+}
+
+.book {
+  color: var(--white-color);
+  background: var(--violet-color);
+}
+.book .section-title {
+  color: var(--white-color);
+}
+.book .section-title span {
+  display: block;
+  color: var(--orange-color);
+}
+.book .container {
+  position: relative;
+  z-index: 0;
+}
+.book__compare {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.book__compare-item {
+  width: 25%;
+}
+.book__compare-title {
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--white-color);
+}
+.book__compare-price {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--orange-color);
+}
+.book__compare-price span {
+  font-weight: 400;
+}
+.book .form-accept {
+  max-width: 65%;
+}
+.book-submit .checkbox {
+  margin-top: 12px;
+}
+.book-submit .button.btn-o {
+  padding: 16px 20px;
+  height: 56px;
+}
+.book-discount {
+  font-weight: 700;
+  color: #593076;
+  font-size: 246px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: -38px;
+  z-index: -1;
+  opacity: 0.7;
 }
