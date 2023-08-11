@@ -1,8 +1,7 @@
-/***** FONTS *****/
 /***** GENERAL ELEMENTS *****/
 :root {
   --white-color: #ffffff;
-  --black-color: #35313F;
+  --black-color: #000000;
   --font-color: #333333;
   --global-color: #E7344C;
   --violet-color: #6D3E91;
@@ -688,4 +687,56 @@ textarea {
   top: -38px;
   z-index: -1;
   opacity: 0.7;
+}
+
+.expenses__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+.expenses__left, .expenses__right {
+  width: 43%;
+}
+.expenses .section-title {
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.expenses__text {
+  max-width: 480px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.expenses__right-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(51, 51, 50, 0.56);
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 18px;
+}
+.expenses-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px;
+  border-top: 1px solid rgba(51, 51, 50, 0.2);
+}
+.expenses-item p {
+  margin: 0;
+}
+.expenses-item .price {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--global-color);
+}
+.expenses-item .price span {
+  margin-left: 2px;
+  font-size: 14px;
+  font-weight: 400;
 }
