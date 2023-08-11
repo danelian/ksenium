@@ -8,7 +8,6 @@
   --violet-color: #6D3E91;
   --orange-color: #FBBA06;
   --grey-color: #ededed;
-  --darkGrey-color: #A8A8A8;
 }
 
 /***** BLOCKS GLOBAL *****/
@@ -118,7 +117,6 @@ img {
   margin-bottom: 40px;
 }
 
-/***** COMPONENTS GLOBAL *****/
 /***** SECTIONS GLOBAL (Widgets) *****/
 .hero__container {
   display: flex;
@@ -498,4 +496,34 @@ img {
   font-size: 16px;
   line-height: 1.25;
   color: var(--font-color);
+}
+
+.howeduc__block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 36px 28px 28px 28px;
+  border: 1px solid rgba(110, 60, 145, 0.3);
+  border-radius: 20px;
+}
+.howeduc__block:not(:last-child) {
+  margin-bottom: 36px;
+}
+.howeduc__block-content {
+  width: calc(50% - 15px);
+}
+.howeduc__block-img {
+  width: calc(48% - 15px);
+  margin-top: -48px;
+}
+.howeduc__block-title {
+  margin-bottom: 28px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--font-color);
+}
+.howeduc__block-title span {
+  color: var(--violet-color);
 }
