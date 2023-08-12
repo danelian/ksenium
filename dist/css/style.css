@@ -885,7 +885,7 @@ textarea {
 }
 .howeduc__block {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   padding: 36px 28px 28px 28px;
@@ -900,7 +900,6 @@ textarea {
 }
 .howeduc__block-img {
   width: calc(48% - 15px);
-  margin-top: -48px;
 }
 .howeduc__block-title {
   margin-bottom: 28px;
@@ -913,6 +912,26 @@ textarea {
   color: var(--violet-color);
 }
 
+@media screen and (max-width: 992px) {
+  .howeduc__block {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 28px 20px 20px 20px;
+  }
+  .howeduc__block-content {
+    width: 100%;
+  }
+  .howeduc__block-img {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0 auto;
+  }
+  .howeduc__block-title {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+}
 .book {
   color: var(--white-color);
   background: var(--violet-color);
