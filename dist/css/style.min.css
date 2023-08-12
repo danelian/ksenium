@@ -1203,6 +1203,41 @@ textarea {
   line-height: 1.2;
 }
 
+@media screen and (max-width: 1200px) {
+  .mentors .section-title {
+    margin-bottom: 20px;
+  }
+  .mentors__subtitle {
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mentors .section-title {
+    margin-bottom: 12px;
+  }
+  .mentors__subtitle {
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+  .mentors__list {
+    gap: 24px;
+  }
+  .mentor h4 {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mentors__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .mentor h4 {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
 .results {
   background: #F4F4F4;
 }

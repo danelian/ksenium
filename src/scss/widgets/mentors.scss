@@ -29,3 +29,51 @@
     line-height: 1.2;
   }
 }
+
+@include desktop {
+  .mentors {
+    .section-title {
+      margin-bottom: 20px;
+    }
+    &__subtitle {
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+  }
+}
+
+@include tablet {
+  .mentors {
+    .section-title {
+      margin-bottom: 12px;
+    }
+    &__subtitle {
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+    &__list {
+      gap: 24px;
+    }
+  }
+  .mentor {
+    h4 {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+  }
+}
+
+@include mobile {
+  .mentors {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+  .mentor {
+    h4 {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+  }
+}
