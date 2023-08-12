@@ -87,3 +87,15 @@ textarea {
 	}
 	/* Checked */
 }
+
+@include mobile {
+	input {
+		padding: 15px 16px;
+		height: 48px;
+		font-size: 18px;
+	}
+	textarea {
+		padding: 15px 16px;
+		font-size: 18px;
+	}
+}

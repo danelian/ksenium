@@ -4,7 +4,6 @@
   .section-title {
     color: var(--white-color);
     span {
-      display: block;
       color: var(--orange-color);
     }
   }
@@ -34,6 +33,7 @@
       line-height: 1;
       color: var(--orange-color);
       span {
+        font-size: 28px;
         font-weight: 400;
       }
     }
@@ -60,5 +60,83 @@
     top: -38px;
     z-index: -1;
     opacity: .7;
+  }
+}
+
+@include desktop {
+  .book {
+    &__compare {
+      margin-bottom: 32px;
+      &-item {
+        width: auto;
+        max-width: 47%;
+        &:not(:last-child) {
+          margin-right: 6%;
+        }
+      }
+      &-title {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      &-price {
+        font-size: 38px;
+      }
+    }
+    .form-accept {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .wpcf7-form {
+      .col-12 {
+        margin-bottom: 16px;
+      }
+    }
+    &-submit {
+      display: flex;
+      flex-direction: column-reverse;
+      .checkbox {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      .button.btn-o {
+        max-width: 100%;
+        width: 300px;
+        margin: 0 auto;
+      }
+    }
+    &-discount {
+      font-size: 118px;
+      top: -6px;
+      right: -4px;
+    }
+  }
+}
+
+@include mobile {
+  .book {
+    &__compare {
+      flex-direction: column;
+      &-item {
+        max-width: 100%;
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      &-price {
+        font-size: 28px;
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+    &-submit {
+      .button.btn-o {
+        width: 100%;
+        padding: 13px 20px;
+        height: 48px;
+      }
+    }
   }
 }
