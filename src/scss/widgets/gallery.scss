@@ -20,3 +20,41 @@
     }
   }
 }
+
+@include desktop {
+  .gallery {
+    .section-title {
+      margin-bottom: 20px;
+    }
+    &__text {
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+    &__grid {
+      gap: 12px;
+    }
+  }
+}
+
+@include tablet {
+  .gallery {
+    .section-title {
+      margin-bottom: 12px;
+    }
+    &__text {
+      margin-bottom: 24px;
+    }
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@include tablet {
+  .gallery {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+  }
+}
