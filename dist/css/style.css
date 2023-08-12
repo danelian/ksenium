@@ -287,6 +287,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   padding: 16px 0;
   cursor: pointer;
 }
@@ -299,6 +300,13 @@ textarea {
   line-height: 1.2;
   color: var(--font-color);
   transition: 0.3s;
+}
+
+.accordeon-btn {
+  display: block;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
 }
 
 .accordeon-content {
@@ -315,10 +323,32 @@ textarea {
   line-height: 1.25;
 }
 
+.accordeon-open .accordeon-btn {
+  transform: rotate(45deg);
+}
 .accordeon-open .accordeon-content {
   margin-bottom: 36px;
 }
 
+@media screen and (max-width: 576px) {
+  .accordeon-header {
+    padding: 10px 0;
+  }
+  .accordeon-title {
+    font-size: 16px;
+  }
+  .accordeon-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .accordeon-content p {
+    font-size: 16px;
+  }
+  .accordeon-open .accordeon-content {
+    margin-bottom: 16px;
+  }
+}
 /***** SECTIONS GLOBAL (Widgets) *****/
 .hero__container {
   display: flex;
