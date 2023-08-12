@@ -54,3 +54,21 @@
     }
   }
 }
+
+@include desktop {
+  .whom {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+@include tablet {
+  .whom {
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+  }
+}

@@ -871,6 +871,18 @@ textarea {
   color: var(--font-color);
 }
 
+@media screen and (max-width: 1200px) {
+  .whom__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .whom__list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
 .howeduc__block {
   display: flex;
   align-items: flex-start;
