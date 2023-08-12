@@ -138,6 +138,10 @@ img {
     padding: 13px 24px;
     height: 48px;
   }
+  .button-rounded {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
 }
 /*-----title----*/
 .section-title {
@@ -1376,6 +1380,92 @@ textarea {
   line-height: 1.2;
 }
 
+@media screen and (max-width: 992px) {
+  .results__block {
+    margin-bottom: 40px;
+    padding: 24px 16px 16px;
+  }
+  .results__subtitle {
+    font-size: 16px;
+  }
+  .results__heading {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+  }
+  .results__heading-name {
+    font-size: 28px;
+  }
+  .results__heading-descr {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .results__heading-salary {
+    font-size: 22px;
+  }
+  .results__heading-subsalary {
+    font-size: 14px;
+  }
+  .abilities__title {
+    margin-bottom: 24px;
+    font-size: 18px;
+  }
+  .results-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .results-list li {
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-left: 18px;
+    margin-right: 0;
+  }
+  .results-list li:before {
+    left: 2px;
+    top: 6px;
+    height: 6px;
+    width: 6px;
+  }
+  .results__diplom {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .results__diplom-left {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+  .results__diplom-right {
+    width: 100%;
+  }
+  .results__diplom .button-rounded {
+    margin-top: 16px;
+  }
+  .diplom__title {
+    font-size: 28px;
+  }
+  .diplom__list {
+    padding-top: 20px;
+  }
+  .diplom__list li {
+    margin-bottom: 16px;
+  }
+  .diplom__list li img {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .results__heading-name {
+    font-size: 24px;
+  }
+  .diplom__title {
+    font-size: 24px;
+  }
+}
 .gallery {
   background-color: #FBBA06;
 }

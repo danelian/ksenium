@@ -133,3 +133,101 @@
     }
   }
 }
+
+@include tablet {
+  .results {
+    &__block {
+      margin-bottom: 40px;
+      padding: 24px 16px 16px;
+    }
+    &__subtitle {
+      font-size: 16px;
+    }
+    &__heading {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      &-name {
+        font-size: 28px;
+      }
+      &-descr {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+      }
+      &-salary {
+        font-size: 22px;
+      }
+      &-subsalary {
+        font-size: 14px;
+      }
+    }
+  }
+  .abilities__title {
+    margin-bottom: 24px;
+    font-size: 18px;
+  }
+  .results-list {
+    grid-template-columns: repeat(1, 1fr);
+    li {
+      font-size: 16px;
+      margin-bottom: 16px;
+      padding-left: 18px;
+      margin-right: 0;
+      &:before {
+        left: 2px;
+        top: 6px;
+        height: 6px;
+        width: 6px;
+      }
+    }
+  }
+  .results__diplom {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    &-left {
+      width: 100%;
+      margin-bottom: 28px;
+    }
+    &-right {
+      width: 100%;
+    }
+    .button-rounded {
+      margin-top: 16px;
+    }
+  }
+  .diplom {
+    &__title {
+      font-size: 28px;
+    }
+    &__list {
+      padding-top: 20px;
+      li {
+        margin-bottom: 16px;
+        img {
+          width: 28px;
+          height: 28px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .results {
+    &__heading {
+      &-name {
+        font-size: 24px;
+      }
+    }
+  }
+  .diplom {
+    &__title {
+      font-size: 24px;
+    }
+  }
+}
