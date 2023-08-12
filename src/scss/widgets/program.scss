@@ -14,9 +14,6 @@
     margin: 0;padding: 0;
     list-style: none;
   }
-  &__stats {
-    width: calc(30% - 15px);
-  }
   &-stage {
     display: flex;
     flex-direction: column;
@@ -193,6 +190,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    list-style: none;margin: 0;padding: 0;
+    width: calc(30% - 15px);
     li {
       display: flex;
       align-items: center;
@@ -238,5 +237,131 @@
     opacity: 1;
     height: 100%;
     overflow: auto;
+  }
+}
+
+
+@include desktop {
+  .program {
+    &__container {
+      justify-content: flex-start;
+      flex-direction: column-reverse;
+    }
+    &__stages {
+      width: 100%;
+    }
+    &-stage {
+      &__header {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 24px 30px 18px;
+      }
+      &__number {
+        line-height: 1.2;
+        bottom: auto;
+        top: -20px;
+      }
+      &__icon {
+        bottom: 10px;
+        transform: none;
+      }
+      &__title {
+        max-width: 90%;
+        margin-bottom: 28px;
+        min-width: auto;
+      }
+      &__lessons {
+        margin-top: 16px;
+        order: 1;
+      }
+    }
+    &__stats {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      li {
+        align-items: flex-start;
+        flex-direction: column;
+        width: calc(33.3% - 20px);
+        margin-right: 20px;
+        margin-bottom: 24px;
+        span {
+          font-size: 32px;
+          margin-right: 0px;
+          margin-bottom: 4px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .stage-open {
+    .program-stage__icon {
+      display: none;
+    }
+    .program-stage__learn-more {
+      margin-left: 0;
+    }
+  }
+}
+
+@include mobile {
+  .program {
+    &-stage {
+      &__header {
+        padding: 20px 20px 18px;
+        min-height: 80px;
+      }
+      &__icon {
+        max-width: 52px;
+      }
+      &__title {
+        font-size: 24px;
+      }
+      &__lessons {
+        margin-top: 8px;
+      }
+      &__learn-more {
+        justify-content: flex-end;
+        max-width: 150px;
+        margin-left: auto;
+        p {
+          margin-right: 5px;
+          order: -1;
+        }
+      }
+      &__arrow {
+        margin-right: 0;
+        max-width: 46px;
+        max-height: 46px;
+      }
+      &__section {
+        &-title {
+          padding: 0 20px;
+          margin-bottom: 16px;
+          font-size: 20px;
+        }
+        &-list {
+          padding: 0 20px;
+          margin-bottom: 24px;
+          li {
+            margin-bottom: 12px;
+          }
+        }
+      }
+      &__techs {
+        padding: 0 20px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 16px;
+        li {
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
   }
 }

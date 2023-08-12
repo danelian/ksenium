@@ -44,11 +44,6 @@
 
 @include desktop {
   .learn {
-    .container {
-      &::before {
-        bottom: -39px;
-      }
-    }
     .section-title {
       font-size: 36px;
     }
@@ -61,6 +56,11 @@
 
 @include tablet {
   .learn {
+    .container {
+      &::before {
+        bottom: -39px;
+      }
+    }
     .section-title {
       font-size: 28px;
     }
